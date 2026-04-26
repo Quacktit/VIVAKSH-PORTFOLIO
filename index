@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Bold</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">YN</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta">Hire Me</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-text">PORTFOLIO</div>
+    <div class="hero-content">
+      <div class="hero-tag reveal">Available for work</div>
+      <h1 class="hero-title reveal">
+        <span class="line">YOUR</span>
+        <span class="line accent">NAME</span>
+        <span class="line">HERE</span>
+      </h1>
+      <p class="hero-sub reveal">Creative Developer & Designer crafting bold digital experiences that leave a mark.</p>
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn-primary">See My Work</a>
+        <a href="#contact" class="btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat reveal"><span class="stat-num">50+</span><span class="stat-label">Projects</span></div>
+      <div class="stat reveal"><span class="stat-num">5+</span><span class="stat-label">Years Exp</span></div>
+      <div class="stat reveal"><span class="stat-num">30+</span><span class="stat-label">Clients</span></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Web Design</span><span class="dot">●</span>
+      <span>Development</span><span class="dot">●</span>
+      <span>UI/UX</span><span class="dot">●</span>
+      <span>Branding</span><span class="dot">●</span>
+      <span>Motion</span><span class="dot">●</span>
+      <span>Strategy</span><span class="dot">●</span>
+      <span>Web Design</span><span class="dot">●</span>
+      <span>Development</span><span class="dot">●</span>
+      <span>UI/UX</span><span class="dot">●</span>
+      <span>Branding</span><span class="dot">●</span>
+      <span>Motion</span><span class="dot">●</span>
+      <span>Strategy</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-label reveal">About Me</div>
+          <h2 class="section-title reveal">I Build Things <br><em>People Love</em></h2>
+          <p class="about-text reveal">I'm a passionate creator based in your city, blending design thinking with technical execution. I believe every pixel has a purpose and every interaction should feel intentional.</p>
+          <p class="about-text reveal">When I'm not pushing boundaries in code and design, I'm exploring emerging tech, contributing to open source, and mentoring future creators.</p>
+          <a href="#" class="btn-outline reveal">Download Resume</a>
+        </div>
+        <div class="about-right reveal">
+          <div class="about-img-wrap">
+            <div class="about-img-placeholder">
+              <div class="img-initials">YN</div>
+            </div>
+            <div class="about-badge">
+              <span class="badge-icon">★</span>
+              <span>Top Rated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">Selected Work</div>
+        <h2 class="section-title reveal">Recent Projects</h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card reveal" data-color="#ff4d00">
+          <div class="project-num">01</div>
+          <div class="project-info">
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-desc">Full-stack online store with real-time inventory, custom CMS, and lightning-fast checkout.</p>
+            <div class="project-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View →</a>
+          <div class="project-img-block" style="background: linear-gradient(135deg,#ff4d00,#ff9900)"></div>
+        </article>
+
+        <article class="project-card reveal" data-color="#7c3aed">
+          <div class="project-num">02</div>
+          <div class="project-info">
+            <h3 class="project-title">SaaS Dashboard</h3>
+            <p class="project-desc">Analytics dashboard with real-time charts, role-based access, and a pixel-perfect design system.</p>
+            <div class="project-tags">
+              <span>Vue</span><span>D3.js</span><span>Firebase</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View →</a>
+          <div class="project-img-block" style="background: linear-gradient(135deg,#7c3aed,#06b6d4)"></div>
+        </article>
+
+        <article class="project-card reveal" data-color="#059669">
+          <div class="project-num">03</div>
+          <div class="project-info">
+            <h3 class="project-title">Brand Identity System</h3>
+            <p class="project-desc">Complete visual identity for a fintech startup — logo, guidelines, web presence, and motion.</p>
+            <div class="project-tags">
+              <span>Figma</span><span>Illustrator</span><span>After Effects</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View →</a>
+          <div class="project-img-block" style="background: linear-gradient(135deg,#059669,#10b981)"></div>
+        </article>
+
+        <article class="project-card reveal" data-color="#e11d48">
+          <div class="project-num">04</div>
+          <div class="project-info">
+            <h3 class="project-title">Mobile App — Health</h3>
+            <p class="project-desc">Cross-platform health tracking app with AI-powered insights and seamless wearable integration.</p>
+            <div class="project-tags">
+              <span>React Native</span><span>Python</span><span>AWS</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View →</a>
+          <div class="project-img-block" style="background: linear-gradient(135deg,#e11d48,#f59e0b)"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">Expertise</div>
+      <h2 class="section-title reveal">My Skill Set</h2>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Frontend</div>
+          <div class="skill-bars">
+            <div class="skill-bar"><span class="skill-name">HTML / CSS</span><div class="bar"><div class="bar-fill" data-w="95"></div></div><span class="skill-pct">95%</span></div>
+            <div class="skill-bar"><span class="skill-name">JavaScript</span><div class="bar"><div class="bar-fill" data-w="90"></div></div><span class="skill-pct">90%</span></div>
+            <div class="skill-bar"><span class="skill-name">React / Vue</span><div class="bar"><div class="bar-fill" data-w="88"></div></div><span class="skill-pct">88%</span></div>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Backend</div>
+          <div class="skill-bars">
+            <div class="skill-bar"><span class="skill-name">Node.js</span><div class="bar"><div class="bar-fill" data-w="85"></div></div><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><span class="skill-name">Python</span><div class="bar"><div class="bar-fill" data-w="80"></div></div><span class="skill-pct">80%</span></div>
+            <div class="skill-bar"><span class="skill-name">Databases</span><div class="bar"><div class="bar-fill" data-w="78"></div></div><span class="skill-pct">78%</span></div>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Design</div>
+          <div class="skill-bars">
+            <div class="skill-bar"><span class="skill-name">Figma</span><div class="bar"><div class="bar-fill" data-w="92"></div></div><span class="skill-pct">92%</span></div>
+            <div class="skill-bar"><span class="skill-name">Motion / GSAP</span><div class="bar"><div class="bar-fill" data-w="75"></div></div><span class="skill-pct">75%</span></div>
+            <div class="skill-bar"><span class="skill-name">Branding</span><div class="bar"><div class="bar-fill" data-w="82"></div></div><span class="skill-pct">82%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="section-label reveal">Get In Touch</div>
+        <h2 class="contact-big reveal">Let's Work<br><em>Together.</em></h2>
+        <p class="contact-sub reveal">Have a project in mind? I'd love to hear about it. Drop me a message and let's build something great.</p>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Tell me about your project..." rows="5"></textarea>
+          <button type="submit" class="btn-primary">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">YN</div>
+        <div class="footer-links">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Dribbble</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Your Name. All rights reserved.</span>
+        <span>Designed & Developed with ♥</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
