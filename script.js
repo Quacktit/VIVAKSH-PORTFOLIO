@@ -165,86 +165,41 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* --- MOBILE & BUG FIXES --- */
+// 1. Mobile Menu Toggle Logic
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
 
-/* Disable custom cursor on touch devices */
-@media (hover: none) and (pointer: coarse) {
-  .cursor, .cursor-follower, .hero-scroll { 
-    display: none !important; 
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// 2. Back to Top Button Logic
+const bttButton = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    bttButton.classList.add('visible');
+  } else {
+    bttButton.classList.remove('visible');
   }
-  body { cursor: auto !important; }
-}
+});
 
-/* Back to Top Button */
-.back-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-  z-index: 999;
-  box-shadow: 0 4px 15px rgba(255, 77, 0, 0.4);
-}
+bttButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Hamburger Menu Icon */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.nav-toggle span {
-  width: 30px;
-  height: 2px;
-  background: var(--accent);
-  transition: 0.3s;
-}
-
-/* Responsive Mobile Navigation */
-@media (max-width: 900px) {
-  .nav-toggle { display: flex; }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hidden off-screen */
-    width: 100%;
-    height: 100vh;
-    background: var(--bg);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s ease-in-out;
-  }
-
-  .nav-links.active { right: 0; } /* Slides in */
-  
-  .nav-links a { font-size: 32px; font-family: var(--font-display); }
-
-  /* Hamburger to 'X' Animation */
-  .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .nav-toggle.active span:nth-child(2) { opacity: 0; }
-  .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-  /* Fix hero text on small screens */
-  .hero-title { font-size: 70px; }
-  .hero-bg-text { display: none; }
+// 3. Optional: Wrap your existing mousemove code 
+// in this check to prevent errors on mobile
+if (window.matchMedia("(pointer: fine)").matches) {
+  // ... your existing cursor move logic here ...
 }
