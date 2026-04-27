@@ -621,6 +621,3 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   .nav-links { display: none; }
   .container { padding: 0 24px; }
 }
-
-
-
