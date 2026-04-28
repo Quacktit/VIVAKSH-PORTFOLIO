@@ -643,10 +643,18 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
     padding: 16px 20px !important;
   }
 
-  /* Ensures it stays opaque even when scrolling */
+  .nav {
+    background: rgba(10, 10, 10, 0.7) !important; /* Slightly translucent (70% opacity) */
+    backdrop-filter: blur(8px) !important;       /* Optional: adds a soft glass effect */
+    border: none !important;                      /* Removes all borders */
+    border-bottom: none !important;               /* Explicitly removes the bottom line */
+    box-shadow: none !important;                  /* Ensures no shadow creates a "fake" border */
+  }
+
   .nav.scrolled {
-    background: #0a0a0a !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+    background: rgba(10, 10, 10, 0.8) !important; /* Slightly darker when scrolling */
+    border: none !important;
+    box-shadow: none !important;
   }
 
   /* 2. SHIFT LIGHTING TO CENTER */
