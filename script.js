@@ -164,3 +164,21 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+
+// ---- BACK TO TOP BUTTON ----
+const backTopBtn = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backTopBtn.classList.add('show');
+  } else {
+    backTopBtn.classList.remove('show');
+  }
+});
+
+if (backTopBtn) {
+  backTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
