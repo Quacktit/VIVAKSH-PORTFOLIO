@@ -2,37 +2,56 @@
    BOLD PORTFOLIO — script.js
    ============================ */
 
+// ---- BULLETPROOF DEVICE DETECTION ----
+// Checks for touch screens, mobile pointers, and Android/iOS behavior
+const isTouchDevice = (
+  'ontouchstart' in window || 
+  navigator.maxTouchPoints > 0 || 
+  window.matchMedia("(pointer: coarse)").matches ||
+  window.innerWidth <= 768
+);
+
 // ---- CUSTOM CURSOR ----
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursorFollower');
-let mouseX = 0, mouseY = 0;
-let followerX = 0, followerY = 0;
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-});
+if (isTouchDevice) {
+  // IF ON ANDROID / PHONE: Completely hide the elements and stop the script
+  if (cursor) cursor.style.display = 'none';
+  if (follower) follower.style.display = 'none';
+  document.body.style.cursor = 'auto';
+  
+} else {
+  // IF ON PC / DESKTOP: Run the smooth cursor animation
+  let mouseX = 0, mouseY = 0;
+  let followerX = 0, followerY = 0;
 
-function animateFollower() {
-  followerX += (mouseX - followerX) * 0.1;
-  followerY += (mouseY - followerY) * 0.1;
-  follower.style.left = followerX + 'px';
-  follower.style.top = followerY + 'px';
-  requestAnimationFrame(animateFollower);
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  // Hide cursor when leaving the browser window
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+    follower.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+    follower.style.opacity = '0.7';
+  });
 }
-animateFollower();
-
-// Hide cursor when leaving window
-document.addEventListener('mouseleave', () => {
-  cursor.style.opacity = '0';
-  follower.style.opacity = '0';
-});
-document.addEventListener('mouseenter', () => {
-  cursor.style.opacity = '1';
-  follower.style.opacity = '0.7';
-});
 
 // ---- NAV SCROLL ----
 const nav = document.getElementById('nav');
