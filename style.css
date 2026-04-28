@@ -59,6 +59,20 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   width: 16px; height: 16px;
 }
 
+/* Disable custom cursor for touch devices (Android/iOS) and small screens */
+@media (pointer: coarse), (max-width: 768px) {
+  .cursor, .cursor-follower { 
+    display: none !important; 
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  
+  /* Force system cursors to return to normal */
+  * { cursor: auto !important; }
+  a, button, .hamburger, .nav-cta, .btn-primary, .back-to-top { cursor: pointer !important; }
+  input, textarea { cursor: text !important; }
+}
+
 /* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
