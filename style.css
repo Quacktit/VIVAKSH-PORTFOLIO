@@ -624,16 +624,44 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   color: var(--text-muted);
 }
 
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .hero-stats { display: none; }
-  .form-row { grid-template-columns: 1fr; }
-  .footer-top, .footer-bottom { flex-direction: column; gap: 16px; }
-  .nav-links { display: none; }
   .container { padding: 0 24px; }
+  
+  /* --- Layout Adjustments --- */
+  .about-grid, .projects-grid, .skills-grid, .form-row {
+    grid-template-columns: 1fr;
+  }
+  .hero-stats { display: none; }
+  .footer-top, .footer-bottom { 
+    flex-direction: column; 
+    gap: 16px; 
+    text-align: center;
+  }
+
+  /* --- Mobile Navigation Override --- */
+  /* Hide the logo and hamburger/CTA container on mobile */
+  .nav-logo,
+  .nav-actions {
+    display: none;
+  }
+  
+  /* Center the main nav container */
+  .nav {
+    justify-content: center;
+  }
+
+  /* Make the nav links visible and arrange them in the header */
+  .nav-links {
+    display: flex;
+    gap: 16px; /* Adjust spacing for smaller screens */
+  }
+
+  /* Hide the "CONNECT" button that was inside the mobile menu */
+  .mobile-cta {
+    display: none;
+  }
 }
 
 
