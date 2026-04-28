@@ -633,7 +633,23 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
    ============================================= */
 @media (max-width: 900px) {
 
-  /* 1. SHIFT LIGHTING TO CENTER */
+  /* 1. OPAQUE HEADER (Android Version)
+     Removes transparency and blur for a solid, clean look */
+  .nav {
+    background: #0a0a0a !important; /* Solid background color */
+    backdrop-filter: none !important; /* Removes the glass effect */
+    border-bottom: 1px solid var(--border) !important; /* Distinct line below header */
+    justify-content: center !important;
+    padding: 16px 20px !important;
+  }
+
+  /* Ensures it stays opaque even when scrolling */
+  .nav.scrolled {
+    background: #0a0a0a !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+  }
+
+  /* 2. SHIFT LIGHTING TO CENTER */
   .hero::before {
     top: -250px !important;
     left: 50% !important;
@@ -645,48 +661,41 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
     display: block !important;
   }
 
-  /* 2. OVERLAP FIX: Move Scroll Indicator down & add Hero padding */
+  /* 3. OVERLAP FIX: Move Scroll Indicator & add Hero spacing */
   .hero {
-    padding-bottom: 120px !important; /* Adds space so buttons don't hit the scroll line */
-    justify-content: flex-start !important; /* Moves content slightly up from center */
+    padding-bottom: 140px !important; 
+    justify-content: flex-start !important;
     padding-top: 180px !important;
   }
-
   .hero-scroll {
-    bottom: 15px !important; /* Moves "Scroll" text closer to the bottom edge */
+    bottom: 15px !important;
     gap: 8px !important;
   }
-
   .scroll-line {
-    height: 40px !important; /* Shortens the line so it takes up less vertical space */
+    height: 40px !important;
   }
-
   .hero-actions {
-    margin-bottom: 40px !important; /* Pushes the buttons away from the scroll indicator */
+    margin-bottom: 50px !important;
     justify-content: center !important;
   }
 
-  /* 3. HIDE CONNECT BUTTON (Android) */
+  /* 4. HIDE CONNECT BUTTON */
   .nav-cta-wrap, 
   .nav-cta {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
+    pointer-events: none !important;
   }
 
-  /* 4. FIX COLLABORATION TEXT FIT */
+  /* 5. FIX COLLABORATION TEXT FIT */
   .contact-big {
     font-size: 42px !important;
     line-height: 1.1 !important;
     word-wrap: break-word !important;
-    display: block !important;
   }
 
-  /* 5. CENTER NAVIGATION LINKS */
-  .nav {
-    justify-content: center !important;
-    padding: 16px 20px !important;
-  }
+  /* 6. CENTER NAVIGATION LINKS */
   .nav-logo {
     display: none !important;
   }
@@ -694,20 +703,12 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
     gap: 20px !important;
   }
 
-  /* 6. GENERAL MOBILE LAYOUT */
+  /* 7. GENERAL MOBILE LAYOUT */
   .container { padding: 0 24px; }
   .section { padding: 80px 0; }
-  
-  .hero-content,
-  .about-left,
-  .section-label,
-  .section-title,
-  .section-header,
-  .skill-group-title,
-  .contact-inner {
+  .hero-content, .about-left, .section-label, .section-title, .section-header, .skill-group-title, .contact-inner {
     text-align: center;
   }
-
   .about-grid, .projects-grid, .skills-grid, .form-row { grid-template-columns: 1fr; }
   .hero-stats { display: none; }
 }
