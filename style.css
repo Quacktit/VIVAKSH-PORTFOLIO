@@ -628,46 +628,57 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
 
 /*-------RESPONSIVE---------*/
 
-
 /* =============================================
    MOBILE & ANDROID FIXES 
-   (These only apply to screens smaller than 900px)
    ============================================= */
 @media (max-width: 900px) {
-  
-  /* 1. HIDE CONNECT BUTTON: This removes the link and button on Android */
+
+  /* 1. SHIFT LIGHTING TO CENTER 
+     This moves the orange glow from the top-right to the top-center */
+  .hero::before {
+    top: -250px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: 500px !important;
+    height: 500px !important;
+    background: radial-gradient(circle, rgba(255,77,0,0.2) 0%, transparent 70%) !important;
+    display: block !important; /* Ensures it stays visible on mobile */
+  }
+
+  /* 2. HIDE CONNECT BUTTON (Android Version) */
   .nav-cta-wrap, 
   .nav-cta {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
-    pointer-events: none !important;
   }
 
-  /* 2. FIX COLLABORATION TEXT: Shrinks the title so it fits phone screens */
+  /* 3. FIX COLLABORATION TEXT FIT */
   .contact-big {
-    font-size: 44px !important; /* Forces a smaller size on mobile */
+    font-size: 44px !important;
     line-height: 1.1 !important;
-    word-wrap: break-word !important; /* Prevents text from going off-screen */
+    word-wrap: break-word !important;
     display: block !important;
     width: 100% !important;
   }
 
-  /* 3. CENTER NAVIGATION: Centers your menu links now that the button is gone */
+  /* 4. CENTER NAVIGATION LINKS */
   .nav {
     justify-content: center !important;
     padding: 16px 20px !important;
+    background: rgba(10, 10, 10, 0.8) !important; /* Slight tint for centered feel */
   }
   .nav-logo {
-    display: none !important; /* Hides logo on mobile to give links more room */
+    display: none !important;
   }
   .nav-links {
     gap: 20px !important;
   }
 
-  /* 4. GENERAL MOBILE LAYOUT ADJUSTMENTS */
+  /* 5. GENERAL MOBILE LAYOUT */
   .container { padding: 0 24px; }
-  .section { padding: 80px 0; } /* Reduces empty space on mobile */
+  .section { padding: 80px 0; }
   
   .hero-content,
   .about-left,
@@ -681,14 +692,9 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
 
   .hero-actions { justify-content: center; }
   .about-grid, .projects-grid, .skills-grid, .form-row { grid-template-columns: 1fr; }
-  .hero-stats { display: none; } /* Hides sidebar stats on small screens */
-
-  .footer-top, .footer-bottom { 
-    flex-direction: column; 
-    gap: 16px; 
-    text-align: center;
-  }
+  .hero-stats { display: none; }
 }
+
 
 /* ---- BACK TO TOP BUTTON ---- */
 .back-to-top {
