@@ -625,11 +625,50 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
 }
 
 
-/* ---- RESPONSIVE ---- */
+
+/*-------RESPONSIVE---------*/
+
+
+/* =============================================
+   MOBILE & ANDROID FIXES 
+   (These only apply to screens smaller than 900px)
+   ============================================= */
 @media (max-width: 900px) {
-  .container { padding: 0 24px; }
   
-  /* --- Global Mobile Centering --- */
+  /* 1. HIDE CONNECT BUTTON: This removes the link and button on Android */
+  .nav-cta-wrap, 
+  .nav-cta {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* 2. FIX COLLABORATION TEXT: Shrinks the title so it fits phone screens */
+  .contact-big {
+    font-size: 44px !important; /* Forces a smaller size on mobile */
+    line-height: 1.1 !important;
+    word-wrap: break-word !important; /* Prevents text from going off-screen */
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* 3. CENTER NAVIGATION: Centers your menu links now that the button is gone */
+  .nav {
+    justify-content: center !important;
+    padding: 16px 20px !important;
+  }
+  .nav-logo {
+    display: none !important; /* Hides logo on mobile to give links more room */
+  }
+  .nav-links {
+    gap: 20px !important;
+  }
+
+  /* 4. GENERAL MOBILE LAYOUT ADJUSTMENTS */
+  .container { padding: 0 24px; }
+  .section { padding: 80px 0; } /* Reduces empty space on mobile */
+  
   .hero-content,
   .about-left,
   .section-label,
@@ -639,43 +678,15 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   .contact-inner {
     text-align: center;
   }
-  .hero-actions {
-    justify-content: center;
-  }
 
-  /* --- Layout Adjustments --- */
-  .about-grid, .projects-grid, .skills-grid, .form-row {
-    grid-template-columns: 1fr;
-  }
-  .hero-stats { display: none; }
+  .hero-actions { justify-content: center; }
+  .about-grid, .projects-grid, .skills-grid, .form-row { grid-template-columns: 1fr; }
+  .hero-stats { display: none; } /* Hides sidebar stats on small screens */
+
   .footer-top, .footer-bottom { 
     flex-direction: column; 
     gap: 16px; 
     text-align: center;
-  }
-
-  /* --- Mobile Navigation Override --- */
-  /* Hide the logo and the entire actions container (which holds the button) */
-  .nav-logo,
-  .nav-actions {
-    display: none;
-  }
-  
-  .nav {
-    justify-content: center;
-  }
-  .nav-links {
-    display: flex;
-    gap: 16px;
-  }
-  .mobile-cta {
-    display: none;
-  }
-
-  /* --- Mobile Visual Adjustments --- */
-  .hero::before,
-  .hero::after {
-    display: none;
   }
 }
 
