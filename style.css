@@ -681,6 +681,7 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
 
 /* Phone adjustment */
 @media screen and (max-width: 768px) {
+   touch-action: pan-y;
   .back-to-top {
     bottom: 24px;
     right: 24px;
