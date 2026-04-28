@@ -629,6 +629,23 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
 @media (max-width: 900px) {
   .container { padding: 0 24px; }
   
+  /* --- Global Mobile Centering --- */
+  /* Center-align text content like titles, labels, and paragraphs */
+  .hero-content,
+  .about-left,
+  .section-label,
+  .section-title,
+  .section-header,
+  .skill-group-title,
+  .contact-inner {
+    text-align: center;
+  }
+
+  /* Center-align button groups */
+  .hero-actions {
+    justify-content: center;
+  }
+
   /* --- Layout Adjustments --- */
   .about-grid, .projects-grid, .skills-grid, .form-row {
     grid-template-columns: 1fr;
@@ -641,30 +658,22 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   }
 
   /* --- Mobile Navigation Override --- */
-  /* Hide the logo, hamburger, and desktop CONNECT button */
   .nav-logo,
   .nav-actions {
     display: none;
   }
-  
-  /* Center the main nav container */
   .nav {
     justify-content: center;
   }
-
-  /* Make the nav links visible and arrange them in the header */
   .nav-links {
     display: flex;
-    gap: 16px; /* Adjust spacing for smaller screens */
+    gap: 16px;
   }
-
-  /* Hide the CONNECT button that was inside the mobile menu */
   .mobile-cta {
     display: none;
   }
 
   /* --- Mobile Visual Adjustments --- */
-  /* Remove the hero background glows/lights on mobile */
   .hero::before,
   .hero::after {
     display: none;
