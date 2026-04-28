@@ -621,3 +621,57 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   .nav-links { display: none; }
   .container { padding: 0 24px; }
 }
+
+
+/* ---- BACK TO TOP BUTTON ---- */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 50%; /* Makes it a perfect circle */
+  font-family: var(--font-body);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  
+  /* Hidden by default with animation ready */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s var(--transition);
+  cursor: none; /* Keeps your custom cursor consistent */
+}
+
+/* Class added by JS when scrolling down */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover Effect matching your theme */
+.back-to-top:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(255, 77, 0, 0.45); /* Orange glow */
+  transform: translateY(-4px);
+}
+
+/* Phone adjustment */
+@media screen and (max-width: 768px) {
+  .back-to-top {
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
