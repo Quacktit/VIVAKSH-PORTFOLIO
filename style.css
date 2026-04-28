@@ -641,7 +641,7 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   }
 
   /* --- Mobile Navigation Override --- */
-  /* Hide the logo and hamburger/CTA container on mobile */
+  /* Hide the logo, hamburger, and desktop CONNECT button */
   .nav-logo,
   .nav-actions {
     display: none;
@@ -658,8 +658,15 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
     gap: 16px; /* Adjust spacing for smaller screens */
   }
 
-  /* Hide the "CONNECT" button that was inside the mobile menu */
+  /* Hide the CONNECT button that was inside the mobile menu */
   .mobile-cta {
+    display: none;
+  }
+
+  /* --- Mobile Visual Adjustments --- */
+  /* Remove the hero background glows/lights on mobile */
+  .hero::before,
+  .hero::after {
     display: none;
   }
 }
