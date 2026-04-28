@@ -630,7 +630,6 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   .container { padding: 0 24px; }
   
   /* --- Global Mobile Centering --- */
-  /* Center-align text content like titles, labels, and paragraphs */
   .hero-content,
   .about-left,
   .section-label,
@@ -640,8 +639,6 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   .contact-inner {
     text-align: center;
   }
-
-  /* Center-align button groups */
   .hero-actions {
     justify-content: center;
   }
@@ -658,11 +655,10 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   }
 
   /* --- Mobile Navigation Override --- */
-  /* Hide the logo, hamburger, and the desktop CONNECT button */
+  /* Hide the logo and the entire actions container (which holds the button) */
   .nav-logo,
-  .nav-actions,
-  .desktop-cta { /* This explicitly hides the desktop button */
-    display: none !important; /* Added !important for certainty */
+  .nav-actions {
+    display: none;
   }
   
   .nav {
