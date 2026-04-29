@@ -782,4 +782,19 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   }
 }
 
+/* =============================================
+   HIDE FOOTER LOGO ON MOBILE ONLY
+   ============================================= */
+@media (max-width: 900px) {
+  /* Hides the big "VIVAKSH VANKAR" text logo */
+  .footer-logo {
+    display: none !important;
+  }
+  
+  /* Centers the social links nicely since the logo is gone */
+  .footer-top {
+    justify-content: center !important;
+  }
+}
+
 
