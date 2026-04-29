@@ -783,18 +783,159 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
 }
 
 /* =============================================
-   HIDE FOOTER LOGO ON MOBILE ONLY
+   MOBILE & ANDROID FIXES 
    ============================================= */
 @media (max-width: 900px) {
-  /* Hides the big "VIVAKSH VANKAR" text logo */
-  .footer-logo {
-    display: none !important;
+
+  /* 1. OPAQUE HEADER (Android Version) */
+  .nav {
+    background: rgba(10, 10, 10, 0.7) !important;
+    backdrop-filter: blur(8px) !important;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    justify-content: center !important;
+    padding: 16px 20px !important;
   }
-  
-  /* Centers the social links nicely since the logo is gone */
+
+  .nav.scrolled {
+    background: rgba(10, 10, 10, 0.8) !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 2. SHIFT LIGHTING TO CENTER */
+  .hero::before {
+    top: -250px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: 500px !important;
+    height: 500px !important;
+    background: radial-gradient(circle, rgba(255,77,0,0.2) 0%, transparent 70%) !important;
+    display: block !important;
+  }
+
+  /* 3. OVERLAP FIX */
+  .hero {
+    padding-bottom: 140px !important; 
+    justify-content: flex-start !important;
+    padding-top: 180px !important;
+  }
+  .hero-scroll {
+    bottom: 15px !important;
+    gap: 8px !important;
+  }
+  .scroll-line { height: 40px !important; }
+  .hero-actions {
+    margin-bottom: 50px !important;
+    justify-content: center !important;
+  }
+
+  /* 4. HIDE CONNECT BUTTON */
+  .nav-cta-wrap, 
+  .nav-cta {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* 5. FIX COLLABORATION TEXT FIT */
+  .contact-big {
+    font-size: 42px !important;
+    line-height: 1.1 !important;
+    word-wrap: break-word !important;
+  }
+
+  /* 6. CENTER NAVIGATION LINKS */
+  .nav-logo { display: none !important; }
+  .nav-links { gap: 20px !important; }
+
+  /* 7. GENERAL MOBILE LAYOUT */
+  .container { padding: 0 24px; }
+  .section { padding: 80px 0; }
+  .hero-content, .about-left, .section-label, .section-title, .section-header, .skill-group-title, .contact-inner {
+    text-align: center;
+  }
+  .about-grid, .projects-grid, .skills-grid, .form-row { grid-template-columns: 1fr; }
+  .hero-stats { display: none; }
+
+  /* 8. HIDE FOOTER LOGO ON MOBILE & CENTER LINKS */
+  .footer-logo {
+    display: none !important; /* Hides on Mobile only */
+  }
   .footer-top {
     justify-content: center !important;
   }
+  .footer-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+  .footer-bottom {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+} /* <--- THIS CLOSING BRACKET IS CRITICAL. IT ENDS THE MOBILE SECTION. */
+
+/* =============================================
+   PC SAFETY OVERRIDE
+   ============================================= */
+@media (min-width: 901px) {
+  /* This strictly forces BOTH logos to remain visible on PC regardless of other rules */
+  .nav-logo, .footer-logo {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 }
 
+/* ---- BACK TO TOP BUTTON ---- */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-family: var(--font-body);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s var(--transition);
+  cursor: none; 
+}
 
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(255, 77, 0, 0.45); 
+  transform: translateY(-4px);
+}
+
+@media screen and (max-width: 768px) {
+   touch-action: pan-y;
+  .back-to-top {
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
