@@ -721,6 +721,11 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
   .hero-stats { display: none; }
 }
 
+/* 8. HIDE FOOTER NAME/LOGO ON MOBILE */
+  .footer-logo {
+    display: none !important;
+  }
+
 
 
 /* ---- BACK TO TOP BUTTON ---- */
@@ -776,3 +781,5 @@ body:has(a:hover) .cursor, body:has(button:hover) .cursor {
     font-size: 18px;
   }
 }
+
+
